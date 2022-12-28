@@ -1,4 +1,5 @@
 package com.example.activity_fragment_lifecycle
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,13 @@ class BlankFragment2 : Fragment(R.layout.fragment_blank2)
     {
         Log.d("Fragment----2", "onViewCreated")
     }
+
+    override fun onAttach(context: Context)
+    {
+        super.onAttach(context)
+        Log.d("Fragment----2", "onAttach")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)

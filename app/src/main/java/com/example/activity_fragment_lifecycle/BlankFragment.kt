@@ -1,5 +1,7 @@
 package com.example.activity_fragment_lifecycle
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,7 +33,19 @@ class BlankFragment : Fragment(R.layout.fragment_blank)
             }
         }
 
+        val button3=view.findViewById<Button>(R.id.btn3)
+        button3.setOnClickListener{View->
+            val intent=Intent(this.context,MainActivity2::class.java)
+            startActivity(intent)
+            }
     }
+
+    override fun onAttach(context: Context)
+    {
+        super.onAttach(context)
+        Log.d("Fragment----1", "onAttach")
+    }
+
         override fun onCreate(savedInstanceState: Bundle?)
         {
             super.onCreate(savedInstanceState)
